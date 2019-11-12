@@ -1,4 +1,5 @@
-class GameSerializer < ActiveModel::Serializer
-  has_many :games
-  attributes :id, :games
+class GameSerializer
+  include FastJsonapi::ObjectSerializer
+  belongs_to :user
+  attributes :id, :level, :score, :user, :created_at
 end
